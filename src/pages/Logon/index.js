@@ -14,8 +14,13 @@ export default function Logon(params) {
 
   const history = useHistory()
 
+  if (localStorage.getItem('ongId') != null) {
+    history.push('/profile')
+  }
+
   async function handleLogin(e) {
-    e.preventDefault();
+    e.preventDefault()
+
 
     try {
       const res = await api.post('sessions', { id })

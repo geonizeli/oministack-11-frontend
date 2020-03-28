@@ -17,6 +17,10 @@ export default function Reagister(){
 
   const history = useHistory()
 
+  if (localStorage.getItem('ongId') != null) {
+    history.push('/profile')
+  }
+
   async function handleRegister(e) {
     e.preventDefault();
 
